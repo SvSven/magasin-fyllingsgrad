@@ -1,7 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { ENDPOINTS } from './util'
-import { StatCard } from './components'
+import { Grid, StatCard } from './components'
 import type { RegionData, ResevoirStatistic, ResevoirData } from './types'
 
 function App() {
@@ -51,33 +51,41 @@ function App() {
 
           <section className="section">
             <h2 className="title">Elspot</h2>
-            {resevoirData.EL.map((item) => {
-              const info = regions.elspot.find((i) => i.omrnr === item.omrnr)
+            <Grid type="fixed">
+              {resevoirData.EL.map((item) => {
+                const info = regions.elspot.find((i) => i.omrnr === item.omrnr)
 
-              return (
-                <StatCard
-                  key={`${item.omrType}-${item.omrnr}`}
-                  name={info?.navn_langt || ''}
-                  description={info?.beskrivelse || ''}
-                  level={item.fyllingsgrad}
-                />
-              )
-            })}
+                return (
+                  <Grid.Cell>
+                    <StatCard
+                      key={`${item.omrType}-${item.omrnr}`}
+                      name={info?.navn_langt || ''}
+                      description={info?.beskrivelse || ''}
+                      level={item.fyllingsgrad}
+                    />
+                  </Grid.Cell>
+                )
+              })}
+            </Grid>
           </section>
           <section className="section">
             <h2 className="title">Vassdrag</h2>
-            {resevoirData.VASS.map((item) => {
-              const info = regions.vassdrag.find((i) => i.omrnr === item.omrnr)
+            <Grid type="fixed">
+              {resevoirData.VASS.map((item) => {
+                const info = regions.vassdrag.find((i) => i.omrnr === item.omrnr)
 
-              return (
-                <StatCard
-                  key={`${item.omrType}-${item.omrnr}`}
-                  name={info?.navn_langt || ''}
-                  description={info?.beskrivelse || ''}
-                  level={item.fyllingsgrad}
-                />
-              )
-            })}
+                return (
+                  <Grid.Cell>
+                    <StatCard
+                      key={`${item.omrType}-${item.omrnr}`}
+                      name={info?.navn_langt || ''}
+                      description={info?.beskrivelse || ''}
+                      level={item.fyllingsgrad}
+                    />
+                  </Grid.Cell>
+                )
+              })}
+            </Grid>
           </section>
         </>
       )}
