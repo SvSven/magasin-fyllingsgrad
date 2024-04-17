@@ -30,4 +30,5 @@ export type ResevoirData = {
   NO: ResevoirStatistic
   EL: ResevoirStatistic[]
   VASS: ResevoirStatistic[]
+  date: string
 }
