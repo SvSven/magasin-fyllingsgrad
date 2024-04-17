@@ -105,9 +105,9 @@ function App() {
         <div className="content has-text-centered">
           <p>
             Statistikk basert på data fra{' '}
-            <a href="https://www.nve.no/energi/analyser-og-statistikk/magasinstatistikk/">NVE</a>. Sist oppdadert:{' '}
-            {resevoirData.date}
+            <a href="https://www.nve.no/energi/analyser-og-statistikk/magasinstatistikk/">NVE</a>.
           </p>
+          {resevoirData && <p>Sist oppdadert: {resevoirData.date}</p>}
         </div>
       </footer>
     </div>
