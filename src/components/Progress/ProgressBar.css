@@ -1,0 +1,59 @@
+.pie-wrapper {
+  --default-size: 150px;
+  --bar-color: rgb(0, 209, 178);
+
+  width: var(--default-size);
+  height: var(--default-size);
+  margin: 15px;
+  position: relative;
+  font-size: 160px;
+}
+
+.pie {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  border-color: var(--bar-color);
+  clip: rect(0, 1em, 1em, 0.5em);
+}
+
+.half-circle {
+  width: 100%;
+  height: 100%;
+  border: 0.1em solid var(--bar-color);
+  border-radius: 50%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  clip: rect(0, 0.5em, 1em, 0);
+}
+
+.pie-label {
+  background: rgb(52, 73, 94);
+  border-radius: 50%;
+  bottom: 0.4em;
+  color: #ecf0f1;
+  cursor: default;
+  display: block;
+  font-size: 37.5px;
+  left: 0.4em;
+  line-height: 2.8em;
+  position: absolute;
+  right: 0.4em;
+  text-align: center;
+  top: 0.4em;
+}
+
+.label-percentage {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+.shadow {
+  width: 100%;
+  height: 100%;
+  border: 0.1em solid #bdc3c7;
+  border-radius: 50%;
+}
