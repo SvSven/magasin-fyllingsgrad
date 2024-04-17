@@ -14,7 +14,7 @@ export const StatCard = ({ name, description, level }: StatCardProps) => {
       <header className="card-header">
         <p className="card-header-title">{name}</p>
         <div className="card-header-icon">
-          <span className="tag is-info">{levelPercentage}%</span>
+          <span className="tag is-primary">{levelPercentage}%</span>
         </div>
       </header>
       <div className="card-content">
@@ -24,7 +24,7 @@ export const StatCard = ({ name, description, level }: StatCardProps) => {
       </div>
       <div className="card-footer">
         <div className="card-footer-item">
-          <progress className="progress is-info is-large" value={levelPercentage} max="100">
+          <progress className="progress is-primary is-large" value={levelPercentage} max="100">
             {levelPercentage}%
           </progress>
         </div>
