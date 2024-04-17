@@ -1,7 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
-import { ENDPOINTS } from './util'
-import { Grid, StatCard } from './components'
+import { ENDPOINTS, convertToPercentage } from './util'
+import { Grid, StatCard, ProgressBar } from './components'
 import type { RegionData, ResevoirStatistic, ResevoirData } from './types'
 
 function App() {
@@ -42,11 +42,14 @@ function App() {
       {resevoirData && regions && (
         <>
           <section className="section">
-            <StatCard
-              name={regions.land[0].navn_langt}
-              description={regions.land[0].beskrivelse}
-              level={resevoirData.NO.fyllingsgrad}
-            />
+            <div className="section is-flex is-align-items-center is-justify-content-center">
+              <ProgressBar percentage={parseFloat(convertToPercentage(resevoirData.NO.fyllingsgrad))} />
+
+              <div className="block">
+                <h1 className="title is-1">Fyllingsgrad</h1>
+                <h2 className="subtitle is-3">Gjennomsnitt fyllingsgrad i hele norge</h2>
+              </div>
+            </div>
           </section>
 
           <section className="section">
