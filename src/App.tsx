@@ -48,6 +48,14 @@ function App() {
               <div className="block">
                 <h1 className="title is-1">Fyllingsgrad</h1>
                 <h2 className="subtitle is-3">Gjennomsnitt fyllingsgrad i hele norge</h2>
+
+                <progress
+                  className="progress is-small is-primary"
+                  value={convertToPercentage(resevoirData.NO.fyllingsgrad)}
+                  max="100"
+                >
+                  {convertToPercentage(resevoirData.NO.fyllingsgrad)}%
+                </progress>
               </div>
             </div>
           </section>
