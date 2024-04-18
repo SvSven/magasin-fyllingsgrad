@@ -1,7 +1,7 @@
 import React from 'react'
-import './ProgressBar.css'
+import './RadialProgress.css'
 
-export type ProgressBarProps = {
+export type RadialProgressProps = {
   percentage: number
   barColor?: string
   labelColor?: string
@@ -10,7 +10,7 @@ export type ProgressBarProps = {
   shadowColor?: string
 }
 
-export const ProgressBar = ({
+export const RadialProgress = ({
   percentage,
   barColor,
   labelColor,
@@ -18,7 +18,7 @@ export const ProgressBar = ({
   shadow = true,
   shadowColor,
   ...rest
-}: ProgressBarProps) => {
+}: RadialProgressProps) => {
   const customStyles = {
     ...(barColor && { '--bar-color': barColor }),
     ...(labelColor && { '--label-color': labelColor }),

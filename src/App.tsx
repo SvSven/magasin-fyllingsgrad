@@ -1,7 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { ENDPOINTS, convertToPercentage } from './util'
-import { Grid, StatCard, ProgressBar } from './components'
+import { Grid, StatCard, RadialProgress } from './components'
 import type { RegionData, ResevoirStatistic, ResevoirData } from './types'
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
           <>
             <section className="section">
               <div className="section is-flex is-align-items-center is-justify-content-center">
-                <ProgressBar percentage={parseFloat(convertToPercentage(resevoirData.NO.fyllingsgrad))} />
+                <RadialProgress percentage={parseFloat(convertToPercentage(resevoirData.NO.fyllingsgrad))} />
 
                 <div className="block">
                   <h1 className="title is-1">Fyllingsgrad</h1>
