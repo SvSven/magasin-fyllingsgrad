@@ -47,7 +47,7 @@ function App() {
               <div className="section is-flex is-align-items-center is-justify-content-center">
                 <RadialProgress percentage={parseFloat(convertToPercentage(resevoirData.NO.fyllingsgrad))} />
 
-                <div className="block">
+                <div className="block p-5">
                   <h1 className="title is-1">Fyllingsgrad</h1>
                   <h2 className="subtitle is-3">Gjennomsnitt fyllingsgrad i hele norge</h2>
 
