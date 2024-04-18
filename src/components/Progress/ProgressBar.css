@@ -1,28 +1,33 @@
-.pie-wrapper {
-  --default-size: 150px;
-  --bar-color: rgb(0, 209, 178);
+.radial-progress-wrapper {
+  font-size: 10em;
 
-  width: var(--default-size);
-  height: var(--default-size);
-  margin: 15px;
-  position: relative;
-  font-size: 160px;
+  --default-size: 1em;
+  --default-bar-color: rgb(0, 209, 178);
+  --default-font-color: rgb(236, 240, 241);
+  --default-label-background: rgb(52, 73, 94);
+  --default-shadow-color: rgb(189, 195, 199);
 }
 
-.pie {
+.rp-container {
+  width: var(--default-size);
+  height: var(--default-size);
+  position: relative;
+}
+
+.rp-circle {
   width: 100%;
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  border-color: var(--bar-color);
+  border-color: var(--bar-color, var(--default-bar-color));
   clip: rect(0, 1em, 1em, 0.5em);
 }
 
-.half-circle {
+.rp-half-circle {
   width: 100%;
   height: 100%;
-  border: 0.1em solid var(--bar-color);
+  border: 0.1em solid var(--bar-color, var(--default-bar-color));
   border-radius: 50%;
   left: 0;
   position: absolute;
@@ -30,14 +35,14 @@
   clip: rect(0, 0.5em, 1em, 0);
 }
 
-.pie-label {
-  background: rgb(52, 73, 94);
+.rp-label {
+  background: var(--label-color, var(--default-label-background));
   border-radius: 50%;
   bottom: 0.4em;
-  color: #ecf0f1;
+  color: var(--font-color, var(--default-font-color));
   cursor: default;
   display: block;
-  font-size: 37.5px;
+  font-size: calc(1em / 4);
   left: 0.4em;
   line-height: 2.8em;
   position: absolute;
@@ -46,14 +51,14 @@
   top: 0.4em;
 }
 
-.label-percentage {
+.rp-label-percentage {
   font-size: 0.5em;
   vertical-align: super;
 }
 
-.shadow {
+.rp-shadow {
   width: 100%;
   height: 100%;
-  border: 0.1em solid #bdc3c7;
+  border: 0.1em solid var(--shadow-color, var(--default-shadow-color));
   border-radius: 50%;
 }
