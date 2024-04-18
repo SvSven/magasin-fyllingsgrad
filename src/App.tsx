@@ -69,9 +69,8 @@ function App() {
                   const info = regions.elspot.find((i) => i.omrnr === item.omrnr)
 
                   return (
-                    <Grid.Cell>
+                    <Grid.Cell key={`${item.omrType}-${item.omrnr}`}>
                       <StatCard
-                        key={`${item.omrType}-${item.omrnr}`}
                         name={info?.navn_langt || ''}
                         description={info?.beskrivelse || ''}
                         level={item.fyllingsgrad}
@@ -88,9 +87,8 @@ function App() {
                   const info = regions.vassdrag.find((i) => i.omrnr === item.omrnr)
 
                   return (
-                    <Grid.Cell>
+                    <Grid.Cell key={`${item.omrType}-${item.omrnr}`}>
                       <StatCard
-                        key={`${item.omrType}-${item.omrnr}`}
                         name={info?.navn_langt || ''}
                         description={info?.beskrivelse || ''}
                         level={item.fyllingsgrad}
