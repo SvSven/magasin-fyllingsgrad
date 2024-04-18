@@ -43,22 +43,20 @@ function App() {
       <div className="container">
         {resevoirData && regions && (
           <>
-            <section className="section">
-              <div className="section is-flex is-align-items-center is-justify-content-center">
-                <RadialProgress percentage={parseFloat(convertToPercentage(resevoirData.NO.fyllingsgrad))} />
+            <section id="intro" className="section is-flex is-align-items-center is-justify-content-center">
+              <RadialProgress percentage={parseFloat(convertToPercentage(resevoirData.NO.fyllingsgrad))} />
 
-                <div className="block p-5">
-                  <h1 className="title is-1">Fyllingsgrad</h1>
-                  <h2 className="subtitle is-3">Gjennomsnitt fyllingsgrad i hele norge</h2>
+              <div className="block p-5">
+                <h1 className="title mb-2">Fyllingsgrad</h1>
+                <h2 className="subtitle">Gjennomsnitt fyllingsgrad i hele norge</h2>
 
-                  <progress
-                    className="progress is-small is-primary"
-                    value={convertToPercentage(resevoirData.NO.fyllingsgrad)}
-                    max="100"
-                  >
-                    {convertToPercentage(resevoirData.NO.fyllingsgrad)}%
-                  </progress>
-                </div>
+                <progress
+                  className="progress is-small is-primary"
+                  value={convertToPercentage(resevoirData.NO.fyllingsgrad)}
+                  max="100"
+                >
+                  {convertToPercentage(resevoirData.NO.fyllingsgrad)}%
+                </progress>
               </div>
             </section>
 

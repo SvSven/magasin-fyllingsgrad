@@ -1,3 +1,27 @@
+#intro {
+  flex-direction: column;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+  }
+}
+
+#intro .title {
+  font-size: 2.5rem;
+
+  @media (min-width: 769px) {
+    font-size: 3rem;
+  }
+}
+
+#intro .subtitle {
+  font-size: 1.5rem;
+
+  @media (min-width: 769px) {
+    font-size: 2rem;
+  }
+}
+
 .grid .cell .card {
   height: 100%;
 }
