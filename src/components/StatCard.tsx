@@ -10,14 +10,14 @@ export const StatCard = ({ name, description, level }: StatCardProps) => {
   const levelPercentage = convertToPercentage(level)
 
   return (
-    <div className="card">
+    <div className="card is-flex is-flex-direction-column">
       <header className="card-header">
         <p className="card-header-title">{name}</p>
         <div className="card-header-icon">
           <span className="tag is-primary">{levelPercentage}%</span>
         </div>
       </header>
-      <div className="card-content">
+      <div className="card-content is-flex-grow-1">
         <div className="content">
           <p>{description}</p>
         </div>
