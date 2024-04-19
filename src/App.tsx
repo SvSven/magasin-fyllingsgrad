@@ -1,10 +1,11 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { ENDPOINTS, convertToPercentage } from './util'
-import { Grid, StatCard, RadialProgress } from './components'
+import { Grid, StatCard, RadialProgress, LoadingPage } from './components'
 import type { RegionData, ResevoirStatistic, ResevoirData } from './types'
 
 function App() {
+  const [loading, setLoading] = useState<boolean>(true)
   const [resevoirData, setResevoirData] = useState<ResevoirData | null>(null)
   const [regions, setRegions] = useState<RegionData | null>(null)
 
@@ -37,6 +38,16 @@ function App() {
     document.documentElement.setAttribute('data-theme', 'light')
     fetchData()
   }, [])
+
+  useEffect(() => {
+    if (resevoirData && regions) {
+      setLoading(false)
+    }
+  })
+
+  if (loading) {
+    return <LoadingPage />
+  }
 
   return (
     <>
